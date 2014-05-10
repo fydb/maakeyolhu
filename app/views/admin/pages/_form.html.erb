@@ -1,0 +1,16 @@
+<%= bootstrap_form_for([:admin, @page], layout: :horizontal) do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <%= f.text_field :name %>
+  <%= f.text_field :title %>
+  <%= f.text_area :meta_description %>
+  <%= f.text_area :content, class:'summernote' %>
+  <%= f.text_field :permalink %>
+  <%= f.form_group do %>
+    <%= f.check_box :active, checked: true %>
+  <% end %>
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+  
+<% end %>

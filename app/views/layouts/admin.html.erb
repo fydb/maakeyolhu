@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Admin Panel</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!--[if lt IE 7]>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+  <![endif]-->
+    <!-- Fav and touch icons -->
+
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section>
+    <nav class="navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          <span class="pull-right visible-xs offbtn">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </span>
+      </div>
+      
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+                <li class="active"><a href="#"><span class="icon-home"></span> SimpleDashboard</a></li>
+                <li><a href="#"><span class="icon-calendar"></span> Calendar</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-list-alt"></span> Widgets <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://www.bootstraptor.com"> Action</a></li>
+                        <li><a href="http://www.bootstraptor.com"> Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-search"></span>Search <b class="caret"></b></a>
+                    <ul class="dropdown-menu" style="min-width: 310px;">
+                        <li>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="navbar-form navbar-left" role="search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="button">
+                                                Go!</button>
+                                        </span>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-comment"></span> Chats <span class="label label-primary">42</span>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="label label-primary">9:00 AM</span> First message</a></li>
+                        <li><a href="#"><span class="label label-primary">10:00 AM</span> Second message</a></li>
+                        <li><a href="#"><span class="label label-primary">11:00 AM</span> Fird message</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="text-center">View All</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-envelope"></span> Inbox <span class="label label-info">32</span>
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="label label-primary">4:00 AM</span> Message title</a></li>
+                        <li><a href="#"><span class="label label-primary">4:30 AM</span> Message title</a></li>
+                        <li><a href="#"><span class="label label-primary">5:00 AM</span> Long message title test</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" class="text-center">View All</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon-user"></span> Admin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="icon-user"></span> Profile</a></li>
+                        <li><a href="#"><span class="icon-cog"></span> Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><span class="icon-off"></span> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+      </div>
+      
+    </nav>
+</section>
+<section>
+<div class="container">
+  <%= yield %>
+</div>
+</section>
+
+</body>
+</html>

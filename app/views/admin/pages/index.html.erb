@@ -1,0 +1,36 @@
+<div class="row">
+  <h1>Pages</h1>
+    <table class="dataTable table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Clean Url</th>
+          <th>Active</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th class="index_action">Edit Content</th>
+          <th class="index_action">Edit Page</th>
+          <th class="index_action">Delete</th>
+        </tr>
+      </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= link_to page.name %></td>
+        <td><%= page.permalink %></td>
+        <td><%= page.active %></td>
+        <td><%= page.created_at %></td>
+        <td><%= page.updated_at %></td>
+        <td><%= link_to 'Show', admin_page_path(page) %></td>
+        <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
+        <td><%= link_to 'Destroy', [:admin, page], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to 'New Page', { action: "new"}, method: "get", class: "btn btn-default" %>
+</div>

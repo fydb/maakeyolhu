@@ -1,0 +1,31 @@
+<%= bootstrap_form_for([:admin, @menu], layout: :horizontal) do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <%= f.text_field :name %>
+  <% if controller.action_name != "new" %>
+      <div id="page_sorting" data-menu-id="<%= @menu.id %>">
+        <div class="row">
+        <div class="col-sm-6 menu_pages">Pages in the menu</div>
+        <div class="col-sm-6 other_pages">Other pages</div>
+      </div>
+
+      <div class="row">
+        <ul id="sortable1" class="connectedSortable col-sm-6">
+          <% @pages.each do |page| %>
+          <li class="ui-state-default" id="page_<%= page.id %>"><span class="ui-icon ui-icon-arrow-4"></span><span class="sorted-name"><%= page.name %></span></a>
+          <% end %>
+        </ul>
+
+        <ul id="sortable2" class="connectedSortable col-sm-6">
+          <% @other_pages.each do |page| %>
+          <li id="page_<%= page.id %>"><span class="ui-icon ui-icon-arrow-4"></span><span class="sorted-name"><%= page.name %></span></a>
+          <% end %>
+        </ul>
+      </div>
+      </div>
+  <% end %>
+
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+<% end %>

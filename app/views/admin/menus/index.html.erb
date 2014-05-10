@@ -1,0 +1,30 @@
+<div class="row">
+  <h1>Menus</h1>
+    <table class="dataTable table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th class="index_action">Edit</th>
+          <th class="index_action">Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @menus.each do |menu| %>
+          <tr>
+            <td><%= menu.name %></td>
+            <td><%= menu.created_at %></td>
+            <td><%= menu.updated_at %></td>
+            <td><%= link_to 'Edit', edit_admin_menu_path(menu) %></td>
+            <td><%= link_to 'Destroy', [@admin, :menu], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+<%= button_to 'New Page', { action: "new"}, method: "get", class: "btn btn-default" %>
+</div>
